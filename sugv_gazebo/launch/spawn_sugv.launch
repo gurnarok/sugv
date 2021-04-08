@@ -8,6 +8,7 @@
 	<arg name="yaw" default="0.0"/>
 	
 	<group ns="$(arg robot_namespace)">
+		<param name="tf_prefix" value="$(arg robot_namespace)" />
 		<include file="$(find sugv_control)/launch/control.launch" />
 		<node name="spawn_sugv" pkg="gazebo_ros" type="spawn_model" 
 			args="	-x $(arg x)

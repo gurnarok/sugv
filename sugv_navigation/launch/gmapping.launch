@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+		<rosparam command="load" file="$(find sugv_navigation)/config/gmapping.yaml"/>
+		<node pkg="gmapping" type="slam_gmapping" name="slam_gmapping">
+			<!-- <remap from="scan" to ="/sugv/scan" /> -->
+		</node>
+</launch>

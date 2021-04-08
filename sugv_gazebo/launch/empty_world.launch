@@ -12,8 +12,12 @@
 		<arg name="debug" value="false"/>
 	</include>
 
+	
 	<include file="$(find sugv_gazebo)/launch/spawn_sugv.launch">
 		<arg name="robot_namespace" value="$(arg robot_namespace)" />
 	</include>
+
+
+	<include file="$(find sugv_navigation)/launch/gmapping.launch" />
 
 </launch>
