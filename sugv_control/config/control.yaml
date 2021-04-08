@@ -1,0 +1,25 @@
+sugv_joint_publisher:
+    type: "joint_state_controller/JointStateController"
+    publish_rate: 50
+
+sugv_velocity_controller:
+  type: "diff_drive_controller/DiffDriveController"
+  left_wheel: joint_wheel_left
+  right_wheel: joint_wheel_right
+  publish_rate: 50
+
+  pose_covariance_diagonal: [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 1000.0]
+  twist_covariance_diagonal: [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 1000.0]
+
+  cmd_vel_timeout: 0.25
+
+  base_frame_id: link_body
+
+  linear:
+    x:
+      has_velocity_limits         : true
+      max_velocity                : 1.0
+  angular:
+    z:
+      has_velocity_limits         : true
+      max_velocity                : 2.0

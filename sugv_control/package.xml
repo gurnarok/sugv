@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>sugv_control</name>
+  <version>0.0.1</version>
+  <description>The sugv_control package</description>
+
+  <maintainer email="hannu.2.henttinen@samk.fi">Hannu Henttinen</maintainer>
+
+
+  <license>GPLv3</license>
+
+  <url type="website">https://github.com/gurnarok/sugv</url>
+  <url type="repository">https://github.com/gurnarok/sugv.git</url>
+  <url type="bugtracker">https://github.com/gurnarok/sugv/issues</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roslaunch</build_depend>
+  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>diff_drive_controller</exec_depend>
+  <exec_depend>joint_state_controller</exec_depend>
+  <exec_depend>joint_trajectory_controller</exec_depend>
+  <exec_depend>sugv_description</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+
+</package>
