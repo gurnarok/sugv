@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <launch>
-	<arg name="robot_namespace" default="sugv" />
 	<arg name="world_name" default="worlds/empty.world" />
 
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -13,10 +12,9 @@
 	</include>
 
 	
-	<include file="$(find sugv_gazebo)/launch/spawn_sugv.launch">
-		<arg name="robot_namespace" value="$(arg robot_namespace)" />
-	</include>
+	<include file="$(find sugv_gazebo)/launch/spawn_sugv.launch" />
 
+	<node name="rviz" pkg="rviz" type="rviz" required="true" args="-d $(find sugv_navigation)/rviz/navigation.rviz"/>
 
 	<include file="$(find sugv_navigation)/launch/gmapping.launch" />
 

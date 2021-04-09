@@ -1,24 +1,19 @@
 <?xml version="1.0"?>
 <launch>
-	<arg name="robot_namespace" default="sugv"/>
 	
 	<arg name="x" default="0.0"/>
 	<arg name="y" default="0.0"/>
 	<arg name="z" default="0.06"/>
 	<arg name="yaw" default="0.0"/>
-	
-	<group ns="$(arg robot_namespace)">
-		<param name="tf_prefix" value="$(arg robot_namespace)" />
-		<include file="$(find sugv_control)/launch/control.launch" />
-		<node name="spawn_sugv" pkg="gazebo_ros" type="spawn_model" 
-			args="	-x $(arg x)
-					-y $(arg y)
-					-z $(arg z)
-					-Y $(arg yaw)
-					-unpause
-					-urdf
-					-param robot_description
-					-model sugv" />
-	</group>
+	<include file="$(find sugv_control)/launch/control.launch" />
+	<node name="spawn_sugv" pkg="gazebo_ros" type="spawn_model" 
+		args="	-x $(arg x)
+				-y $(arg y)
+				-z $(arg z)
+				-Y $(arg yaw)
+				-unpause
+				-urdf
+				-param robot_description
+				-model sugv" />
 
 </launch>
