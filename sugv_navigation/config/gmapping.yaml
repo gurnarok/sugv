@@ -4,8 +4,8 @@ map_frame: map
 
 map_update_interval: 0.5
 
-maxUrange: 1.9
-maxRange: 2.1
+maxUrange: 4.9
+maxRange: 5.1
 particles: 50
 
 linearUpdate: 0.3
@@ -13,10 +13,10 @@ angularUpdate: 0.5
 temporalUpdate: 2.0
 resampleThreshold: 0.5
 
-xmin: -100.0
-ymin: -100.0
-xmax:  100.0
-ymax:  100.0
+xmin: -10.0
+ymin: -10.0
+xmax:  10.0
+ymax:  10.0
 delta: 0.05
 
 sigma: 0.05
