@@ -12,5 +12,12 @@
       <name>willow_garage</name>
       <pose>-2 -16 0 0 0 0</pose>
     </include>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-0 0 7.34847 3.14159 1.57079 3.14159</pose>
+        <view_controller>ortho</view_controller>
+        <projection_type>orthographic</projection_type>
+      </camera>
+    </gui>
   </world>
 </sdf>

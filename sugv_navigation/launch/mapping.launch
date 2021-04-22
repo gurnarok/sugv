@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+	<node pkg="hector_mapping" type="hector_mapping" name="hector_mapping" output="screen">
+		<rosparam command="load" file="$(find sugv_navigation)/config/hector_mapping.yaml"/>
+	</node>
+
+	<node pkg="hector_trajectory_server" type="hector_trajectory_server" name="hector_trajectory_server" output="screen">
+		<param name="target_frame_name" type="string" value="map" />
+		<param name="source_frame_name" type="string" value="base_link" />
+		<param name="trajectory_update_rate" type="double" value="4.0" />
+		<param name="trajectory_publish_rate" type="double" value="0.25" />
+	</node>
+
+	<!-- This node tells how to explore  -->
+	<node pkg="hector_navigation_node" type="hector_navigation_node" name="hector_navigation_node" output="screen">
+		<rosparam file="$(find sugv_navigation)/config/hector_costmap.yaml" command="load" />
+		<remap from="/cmd_vel" to="/sugv_velocity_controller/cmd_vel" />
+	</node>
+
+	<!-- This controls the motors.  -->
+	<!-- <node pkg="hector_exploration_controller" type="simple_exploration_controller" name="hector_exploration_controller" output="screen">
+		<remap from="/cmd_vel" to="/sugv_velocity_controller/cmd_vel" />
+	</node> -->
+
+</launch>

@@ -16,6 +16,6 @@
 
 	<node name="rviz" pkg="rviz" type="rviz" required="true" args="-d $(find sugv_navigation)/rviz/navigation.rviz"/>
 
-	<include file="$(find sugv_navigation)/launch/gmapping.launch" />
+	<include file="$(find sugv_navigation)/launch/mapping.launch" />
 
 </launch>
